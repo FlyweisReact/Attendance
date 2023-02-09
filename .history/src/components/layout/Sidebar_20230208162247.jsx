@@ -81,6 +81,11 @@ const Sidebar = ({ hamb, setHamb }) => {
       link: "/workSchedule",
       name: "Work Schedule",
     },
+    // {
+    //   icon: <IoIosPricetags className="text-xl mr-3" />,
+    //   link: "/shift",
+    //   name: "Manage Shift's",
+    // },
     {
       icon: <IoIosPricetags className="text-xl mr-3" />,
       link: "/attendance",
@@ -90,6 +95,11 @@ const Sidebar = ({ hamb, setHamb }) => {
       icon: <IoIosPricetags className="text-xl mr-3" />,
       link: "/leave",
       name: "Leave's",
+    },
+    {
+      icon: <BsFillImageFill className="text-xl mr-3" />,
+      link: "/cat",
+      name: "Banners",
     },
     {
       icon: <BsFillImageFill className="text-xl mr-3" />,

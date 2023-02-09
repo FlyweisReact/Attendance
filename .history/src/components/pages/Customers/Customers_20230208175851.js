@@ -356,6 +356,7 @@ const Customers = () => {
                   <td> {i.Email} </td>
                   <td> {i.BasicSalary} </td>
                   <td> {i.Department} </td>
+                  <td> {i.Designation} </td>
                   <td> {i.EmployeeCode} </td>
                   <td> {i.Designation} </td>
                   <td> {i.State} </td>
@@ -364,8 +365,17 @@ const Customers = () => {
                   <td> {i.PHC} </td>
                   <td> {i.SC} </td>
                   <td> {i.MedicalOfficer} </td>
+              
                   <td>
                     <div style={{ display: "flex", gap: "10px" }}>
+                      <i
+                        className="fa-solid fa-pen-to-square"
+                        style={{ color: "#267cb5", cursor: "pointer" }}
+                        onClick={() => {
+                          setModalShow(true);
+                          setEdit(true);
+                        }}
+                      ></i>
                       <i
                         className="fa-solid fa-trash"
                         style={{ color: "red", cursor: "pointer" }}

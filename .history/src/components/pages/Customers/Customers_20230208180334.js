@@ -364,6 +364,7 @@ const Customers = () => {
                   <td> {i.PHC} </td>
                   <td> {i.SC} </td>
                   <td> {i.MedicalOfficer} </td>
+              
                   <td>
                     <div style={{ display: "flex", gap: "10px" }}>
                       <i

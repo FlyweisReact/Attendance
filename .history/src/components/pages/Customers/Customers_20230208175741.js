@@ -354,18 +354,29 @@ const Customers = () => {
                   <td> {i.name} </td>
                   <td> {i.Mobile} </td>
                   <td> {i.Email} </td>
-                  <td> {i.BasicSalary} </td>
+                  <td> {i.Address} </td>
+                  <td> {i.role} </td>
+                  <td> {i.location} </td>
                   <td> {i.Department} </td>
-                  <td> {i.EmployeeCode} </td>
                   <td> {i.Designation} </td>
+                  <td> {i.EmployeeCode} </td>
+                  <td> {i.Salary} </td>
                   <td> {i.State} </td>
                   <td> {i.District} </td>
                   <td> {i.Taluka} </td>
                   <td> {i.PHC} </td>
                   <td> {i.SC} </td>
-                  <td> {i.MedicalOfficer} </td>
+                  <td> {i.Medical} </td>
                   <td>
                     <div style={{ display: "flex", gap: "10px" }}>
+                      <i
+                        className="fa-solid fa-pen-to-square"
+                        style={{ color: "#267cb5", cursor: "pointer" }}
+                        onClick={() => {
+                          setModalShow(true);
+                          setEdit(true);
+                        }}
+                      ></i>
                       <i
                         className="fa-solid fa-trash"
                         style={{ color: "red", cursor: "pointer" }}

@@ -81,6 +81,11 @@ const Sidebar = ({ hamb, setHamb }) => {
       link: "/workSchedule",
       name: "Work Schedule",
     },
+    // {
+    //   icon: <IoIosPricetags className="text-xl mr-3" />,
+    //   link: "/shift",
+    //   name: "Manage Shift's",
+    // },
     {
       icon: <IoIosPricetags className="text-xl mr-3" />,
       link: "/attendance",

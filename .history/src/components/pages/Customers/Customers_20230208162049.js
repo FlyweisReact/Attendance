@@ -335,16 +335,21 @@ const Customers = () => {
                 <th>Employee Name</th>
                 <th>Mobile</th>
                 <th> Email</th>
-                <th>Basic Salary</th>
+                <th> Address </th>
+                <th> Employee Role </th>
+                <th> Office Location </th>
                 <th>Department</th>
                 <th> Designation</th>
                 <th>Employee Code</th>
+                <th>Basic Salary</th>
                 <th>State</th>
                 <th>District</th>
                 <th>Taluka</th>
                 <th>PHC</th>
                 <th>SC</th>
                 <th>Medical Officer</th>
+                <th>Document</th>
+                <th>Resign</th>
                 <th>Actions</th>
               </tr>
             </thead>
@@ -352,20 +357,48 @@ const Customers = () => {
               {filterData?.map((i, index) => (
                 <tr key={index}>
                   <td> {i.name} </td>
-                  <td> {i.Mobile} </td>
+                  <td> {i.mobile} </td>
                   <td> {i.Email} </td>
-                  <td> {i.BasicSalary} </td>
+                  <td> {i.Address} </td>
+                  <td> {i.role} </td>
+                  <td> {i.location} </td>
                   <td> {i.Department} </td>
-                  <td> {i.EmployeeCode} </td>
                   <td> {i.Designation} </td>
+                  <td> {i.EmployeeCode} </td>
+                  <td> {i.Salary} </td>
                   <td> {i.State} </td>
                   <td> {i.District} </td>
                   <td> {i.Taluka} </td>
                   <td> {i.PHC} </td>
                   <td> {i.SC} </td>
-                  <td> {i.MedicalOfficer} </td>
+                  <td> {i.Medical} </td>
+                  {/* <td>
+                    <input type="file" />
+                  </td> */}
+                  {/* <td>
+                    <Button
+                      style={{
+                        backgroundColor: "#ff5370",
+                        color: "#fff",
+                        borderRadius: "0",
+                        border: "1px solid #ff5370",
+                        padding: "10px",
+                      }}
+                      onClick={() => toast.success("Resigned Successfully")}
+                    >
+                      Resign
+                    </Button>
+                  </td> */}
                   <td>
                     <div style={{ display: "flex", gap: "10px" }}>
+                      <i
+                        className="fa-solid fa-pen-to-square"
+                        style={{ color: "#267cb5", cursor: "pointer" }}
+                        onClick={() => {
+                          setModalShow(true);
+                          setEdit(true);
+                        }}
+                      ></i>
                       <i
                         className="fa-solid fa-trash"
                         style={{ color: "red", cursor: "pointer" }}

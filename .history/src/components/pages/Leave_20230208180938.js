@@ -43,7 +43,7 @@ const Leave = () => {
 
   useEffect(() => {
     fetchData()
-  },[])
+  })
  
     return (
         <>

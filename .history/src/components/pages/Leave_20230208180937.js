@@ -42,8 +42,8 @@ const Leave = () => {
 
 
   useEffect(() => {
-    fetchData()
-  },[])
+    fetc
+  })
  
     return (
         <>

@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import HOC from "../layout/HOC";
 import {
   Table
@@ -24,26 +24,11 @@ const data = [
 
 const Leave = () => {
 
-  const token = localStorage.getItem("token")
-  const [ data , setData ] = useState([])
-
   const fetchData = async () => {
     try{
-       const {data } = await axios.get("https://nxyf2bcbj9.execute-api.ap-south-1.amazonaws.com/dev/api/v1/admin/leaves" , {
-        headers : {
-          Auhtorization : `Bearer ${token}`
-        }
-       })
-       setData(data)
-    }catch(err){
-      console.log(err)
+       const {data } = await axios.get("https://nxyf2bcbj9.execute-api.ap-south-1.amazonaws.com/dev/api/v1/admin/leaves")
     }
   }
-
-
-  useEffect(() => {
-    fetchData()
-  },[])
  
     return (
         <>

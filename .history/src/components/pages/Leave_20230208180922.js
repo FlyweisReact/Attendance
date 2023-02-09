@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import HOC from "../layout/HOC";
 import {
   Table
@@ -39,11 +39,6 @@ const Leave = () => {
       console.log(err)
     }
   }
-
-
-  useEffect(() => {
-    fetchData()
-  },[])
  
     return (
         <>

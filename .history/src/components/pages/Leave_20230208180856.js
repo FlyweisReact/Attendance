@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import HOC from "../layout/HOC";
 import {
   Table
@@ -24,8 +24,7 @@ const data = [
 
 const Leave = () => {
 
-  const token = localStorage.getItem("token")
-  const [ data , setData ] = useState([])
+  const token = localStorage.get
 
   const fetchData = async () => {
     try{
@@ -35,15 +34,8 @@ const Leave = () => {
         }
        })
        setData(data)
-    }catch(err){
-      console.log(err)
     }
   }
-
-
-  useEffect(() => {
-    fetchData()
-  },[])
  
     return (
         <>
