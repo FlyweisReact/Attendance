@@ -93,8 +93,8 @@ const Sidebar = ({ hamb, setHamb }) => {
     },
     {
       icon: <IoIosPricetags className="text-xl mr-3" />,
-      link: "/leaveType",
-      name: "Leave Type",
+      link: "/leave",
+      name: "Leave's",
     },
     {
       icon: <BsFillImageFill className="text-xl mr-3" />,

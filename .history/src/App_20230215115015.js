@@ -24,7 +24,6 @@ import WorkSchedul from "./components/pages/WorkSchedul";
 import Shift from "./components/pages/Shift";
 import Attendance from "./components/pages/Attendance";
 import Leave from "./components/pages/Leave";
-import LeaveType from "./components/pages/LeaveType";
 
 function App() {
   return (
@@ -52,7 +51,7 @@ function App() {
         <Route path="/terms" element={<Terms />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/help" element={<Help />} />
-        <Route path="/leaveType" element={<LeaveType />} />
+        <Route 
 
       </Routes>
     </>
