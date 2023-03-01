@@ -25,7 +25,6 @@ import Shift from "./components/pages/Shift";
 import Attendance from "./components/pages/Attendance";
 import Leave from "./components/pages/Leave";
 import LeaveType from "./components/pages/LeaveType";
-import ViewCustomer from "./components/pages/Customers/ViewCustomer";
 
 function App() {
   return (
@@ -54,7 +53,7 @@ function App() {
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/help" element={<Help />} />
         <Route path="/leaveType" element={<LeaveType />} />
-        <Route path="/viewCustomer/:id" element={<ViewCustomer />} />
+        <Route path="/"
       </Routes>
     </>
   );

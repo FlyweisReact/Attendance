@@ -519,7 +519,7 @@ const Customers = () => {
           }}
         >
           <span style={{ color: "black", fontSize: "15px", fontWeight: "400" }}>
-            All Employee's (Total : {data?.data?.length})
+            All Employee's (Total : {data.length})
             <hr style={{ width: "70%" }} />
           </span>
           <div style={{ display: "flex", gap: "10px" }}>

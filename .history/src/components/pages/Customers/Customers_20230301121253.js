@@ -8,10 +8,8 @@ import { Button, Container, Form } from "react-bootstrap";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { Auth } from "../Auth";
-import { useNavigate } from "react-router-dom";
 
 const Customers = () => {
-  const navigate = useNavigate()
   const [modalShow, setModalShow] = React.useState(false);
   const [query, setQuery] = useState("");
   const [data, setData] = useState([]);
@@ -519,7 +517,7 @@ const Customers = () => {
           }}
         >
           <span style={{ color: "black", fontSize: "15px", fontWeight: "400" }}>
-            All Employee's (Total : {data?.data?.length})
+            All Employee's (Total : {data.length})
             <hr style={{ width: "70%" }} />
           </span>
           <div style={{ display: "flex", gap: "10px" }}>
@@ -637,9 +635,9 @@ const Customers = () => {
                         onClick={() => deleteHandler(i._id)}
                       ></i>
                       <i
-                        className="fa-solid fa-eye"
-                        style={{ color: "blue", cursor: "pointer" }}
-                        onClick={() => navigate(`/viewCustomer/${i._id}`)}
+                        className="fa-solid fa-trash"
+                        style={{ color: "red", cursor: "pointer" }}
+                        onClick={() => deleteHandler(i._id)}
                       ></i>
                     </div>
                   </td>

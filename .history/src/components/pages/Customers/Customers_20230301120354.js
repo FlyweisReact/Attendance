@@ -8,10 +8,8 @@ import { Button, Container, Form } from "react-bootstrap";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { Auth } from "../Auth";
-import { useNavigate } from "react-router-dom";
 
 const Customers = () => {
-  const navigate = useNavigate()
   const [modalShow, setModalShow] = React.useState(false);
   const [query, setQuery] = useState("");
   const [data, setData] = useState([]);
@@ -476,7 +474,7 @@ const Customers = () => {
   // SearchBar
   const filterData = !query
     ? data?.data
-    : data?.data?.filter(
+    : data?.data.filter(
         (i) =>
           i?.name?.toLowerCase().includes(query?.toLowerCase()) ||
           i?.Email?.toLowerCase().includes(query?.toLowerCase())
@@ -519,7 +517,7 @@ const Customers = () => {
           }}
         >
           <span style={{ color: "black", fontSize: "15px", fontWeight: "400" }}>
-            All Employee's (Total : {data?.data?.length})
+            All Employee's (Total : {data.length})
             <hr style={{ width: "70%" }} />
           </span>
           <div style={{ display: "flex", gap: "10px" }}>
@@ -615,9 +613,9 @@ const Customers = () => {
             <tbody>
               {filterData?.map((i, index) => (
                 <tr key={index}>
-                  <td> {i.name} </td>
-                  <td> {i.phone} </td>
-                  <td> {i.email} </td>
+                  <td> {i.EmployeeName} </td>
+                  <td> {i.Mobile} </td>
+                  <td> {i.Email} </td>
                   <td> {i.BasicSalary} </td>
                   <td> {i.Department} </td>
                   <td> {i.EmployeeCode} </td>
@@ -635,11 +633,6 @@ const Customers = () => {
                         className="fa-solid fa-trash"
                         style={{ color: "red", cursor: "pointer" }}
                         onClick={() => deleteHandler(i._id)}
-                      ></i>
-                      <i
-                        className="fa-solid fa-eye"
-                        style={{ color: "blue", cursor: "pointer" }}
-                        onClick={() => navigate(`/viewCustomer/${i._id}`)}
                       ></i>
                     </div>
                   </td>
