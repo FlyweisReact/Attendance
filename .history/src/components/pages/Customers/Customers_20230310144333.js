@@ -33,6 +33,7 @@ const Customers = () => {
         "https://nxyf2bcbj9.execute-api.ap-south-1.amazonaws.com/dev/api/v1/emp/all"
       );
       setData(data);
+      console.log(data)
     } catch (err) {
       console.log(err);
     }
@@ -147,19 +148,16 @@ const Customers = () => {
 
   useEffect(() => {
     fetchDataHandler();
-
-    if(modalShow === true) {
-      EmployeeRoleFetch();
-      officeLocationFetch();
-      fetchDepartment();
-      fetchStates();
-      fetchDistrict();
-      fetchTaluka();
-      fetchPHC();
-      fetchSC();
-      fetchMedicalOffice();
-    }
-  }, [fetchDataHandler , modalShow]);
+    EmployeeRoleFetch();
+    officeLocationFetch();
+    fetchDepartment();
+    fetchStates();
+    fetchDistrict();
+    fetchTaluka();
+    fetchPHC();
+    fetchSC();
+    fetchMedicalOffice();
+  }, [fetchDataHandler]);
 
   // Add Customer
   function MyVerticallyCenteredModal(props) {
@@ -499,7 +497,8 @@ const Customers = () => {
     }
   };
 
-  const changeStatus = async() => {
+  const changeStatus = async (e) => {
+    e.preventDefault()
     try{
       const { data } = await axios.put(`https://nxyf2bcbj9.execute-api.ap-south-1.amazonaws.com/dev/api/v1/users/status/${id}`)
       console.log(data)

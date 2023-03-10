@@ -24,7 +24,6 @@ const Customers = () => {
   const [EfetchPHC, setFetchPHC] = useState([]);
   const [EfetchSC, setFetchSC] = useState([]);
   const [EfetchMedicalOffice, setFetchMedicalOffice] = useState([]);
-  const [ id, setId] = useState("")
 
   // Fetch User Detail
   const fetchDataHandler = useCallback(async () => {
@@ -33,6 +32,7 @@ const Customers = () => {
         "https://nxyf2bcbj9.execute-api.ap-south-1.amazonaws.com/dev/api/v1/emp/all"
       );
       setData(data);
+      
     } catch (err) {
       console.log(err);
     }
@@ -147,19 +147,16 @@ const Customers = () => {
 
   useEffect(() => {
     fetchDataHandler();
-
-    if(modalShow === true) {
-      EmployeeRoleFetch();
-      officeLocationFetch();
-      fetchDepartment();
-      fetchStates();
-      fetchDistrict();
-      fetchTaluka();
-      fetchPHC();
-      fetchSC();
-      fetchMedicalOffice();
-    }
-  }, [fetchDataHandler , modalShow]);
+    EmployeeRoleFetch();
+    officeLocationFetch();
+    fetchDepartment();
+    fetchStates();
+    fetchDistrict();
+    fetchTaluka();
+    fetchPHC();
+    fetchSC();
+    fetchMedicalOffice();
+  }, [fetchDataHandler]);
 
   // Add Customer
   function MyVerticallyCenteredModal(props) {
@@ -499,18 +496,6 @@ const Customers = () => {
     }
   };
 
-  const changeStatus = async() => {
-    try{
-      const { data } = await axios.put(`https://nxyf2bcbj9.execute-api.ap-south-1.amazonaws.com/dev/api/v1/users/status/${id}`)
-      console.log(data)
-      alert('Statsu Chaged')
-      fetchDataHandler()
-    }catch(e){
-      console.log(e)
-    }
-
-  }
-
   return (
     <>
       {" "}
@@ -644,13 +629,10 @@ const Customers = () => {
                   <td> {i.SC} </td>
                   <td> {i.MedicalOfficer} </td>
                   <td> {i.OfficeLocation} </td>
-                  <td> {i.active}     <i
+                  <td> {i.active === true ? "Active" : "Not-Active"}     <i
                         className="fa-solid fa-edit"
                         style={{ color: "blue", cursor: "pointer" }}
-                        onClick={() => {
-                          setId(i._id)
-                          changeStatus()} }
-                        ></i>  </td>
+                      ></i>  </td>
                   <td>
                     <div style={{ display: "flex", gap: "10px" }}>
                       <i
