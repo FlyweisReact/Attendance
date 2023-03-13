@@ -631,9 +631,6 @@ const Customers = () => {
             <tbody>
               {filterData?.map((i, index) => (
                 <tr key={index}>
-                <td> 
-                  {index}
-                </td>
                   <td> {i.name} </td>
                   <td> {i.phone} </td>
                   <td> {i.email} </td>

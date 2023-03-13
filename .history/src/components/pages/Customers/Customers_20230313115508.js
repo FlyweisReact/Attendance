@@ -609,7 +609,7 @@ const Customers = () => {
           <Table striped bordered hover>
             <thead>
               <tr>
-              <th>Sno.</th>
+              <th>S</th>
                 <th>Employee Name</th>
                 <th>Mobile</th>
                 <th> Email</th>
@@ -631,9 +631,6 @@ const Customers = () => {
             <tbody>
               {filterData?.map((i, index) => (
                 <tr key={index}>
-                <td> 
-                  {index}
-                </td>
                   <td> {i.name} </td>
                   <td> {i.phone} </td>
                   <td> {i.email} </td>

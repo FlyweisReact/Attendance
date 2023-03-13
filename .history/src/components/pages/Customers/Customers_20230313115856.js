@@ -32,6 +32,8 @@ const Customers = () => {
       const { data } = await axios.get(
         "https://nxyf2bcbj9.execute-api.ap-south-1.amazonaws.com/dev/api/v1/emp/all"
       );
+      console.log(data)
+      console.log((data.data.indexOf([4])))
       setData(data);
     } catch (err) {
       console.log(err);
@@ -632,7 +634,7 @@ const Customers = () => {
               {filterData?.map((i, index) => (
                 <tr key={index}>
                 <td> 
-                  {index}
+                
                 </td>
                   <td> {i.name} </td>
                   <td> {i.phone} </td>

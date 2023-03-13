@@ -632,7 +632,7 @@ const Customers = () => {
               {filterData?.map((i, index) => (
                 <tr key={index}>
                 <td> 
-                  {index}
+                {}
                 </td>
                   <td> {i.name} </td>
                   <td> {i.phone} </td>
